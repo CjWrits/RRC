@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Royal Rajasthan Collection</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="contact-info">
+                        <span><i class="fas fa-phone"></i> +91-98765-43210</span>
+                        <span><i class="fas fa-envelope"></i> info@royalrajasthan.com</span>
+                    </div>
+                    <div class="header-links">
+                        <a href="#">Track Order</a>
+                        <a href="#">Size Guide</a>
+                        <a href="#">Account</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-content">
+                    <div class="logo">
+                        <h1>Royal Rajasthan</h1>
+                        <span>Collection</span>
+                    </div>
+                    
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="collections.html">Collections</a></li>
+                        <li><a href="products.html" class="active">Products</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                    
+                    <div class="nav-actions">
+                        <div class="search-box">
+                            <input type="text" placeholder="Search products...">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="action-icons">
+                            <div class="icon-item">
+                                <i class="fas fa-heart"></i>
+                                <span class="badge">0</span>
+                            </div>
+                            <div class="icon-item">
+                                <i class="fas fa-shopping-bag"></i>
+                                <span class="badge">0</span>
+                            </div>
+                            <div class="icon-item">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mobile-menu-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-hero">
+        <div class="page-hero-bg"></div>
+        <div class="container">
+            <div class="page-hero-content">
+                <h1>Our Products</h1>
+                <p>Browse our complete collection of authentic Rajasthani clothing</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="products-main">
+        <div class="container">
+            <div class="filter-section">
+                <div class="filter-controls">
+                    <div class="filter-group">
+                        <label>Category</label>
+                        <select class="filter-select">
+                            <option>All Categories</option>
+                            <option>Lehengas</option>
+                            <option>Sarees</option>
+                            <option>Kurtas</option>
+                            <option>Accessories</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Price Range</label>
+                        <select class="filter-select">
+                            <option>All Prices</option>
+                            <option>Under ₹5,000</option>
+                            <option>₹5,000 - ₹15,000</option>
+                            <option>₹15,000 - ₹30,000</option>
+                            <option>Above ₹30,000</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Sort By</label>
+                        <select class="filter-select">
+                            <option>Featured</option>
+                            <option>Price: Low to High</option>
+                            <option>Price: High to Low</option>
+                            <option>Newest First</option>
+                            <option>Best Selling</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="products-grid-main">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://static.vecteezy.com/system/resources/thumbnails/070/420/243/small/vibrant-indian-sarees-and-fabrics-displayed-for-sale-free-photo.jpg" alt="Royal Red Lehenga">
+                        <div class="product-badges">
+                            <span class="badge sale">28% OFF</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="action-btn wishlist-btn"><i class="fas fa-heart"></i></button>
+                            <button class="action-btn quick-view-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Royal Red Lehenga</h3>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(124)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">₹25,999</span>
+                            <span class="original-price">₹35,999</span>
+                        </div>
+                        <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://static.vecteezy.com/system/resources/thumbnails/070/420/243/small/vibrant-indian-sarees-and-fabrics-displayed-for-sale-free-photo.jpg" alt="Golden Silk Saree">
+                        <div class="product-badges">
+                            <span class="badge sale">24% OFF</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="action-btn wishlist-btn"><i class="fas fa-heart"></i></button>
+                            <button class="action-btn quick-view-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Golden Silk Saree</h3>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(89)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">₹18,999</span>
+                            <span class="original-price">₹24,999</span>
+                        </div>
+                        <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://static.vecteezy.com/system/resources/thumbnails/070/420/243/small/vibrant-indian-sarees-and-fabrics-displayed-for-sale-free-photo.jpg" alt="Designer Kurta Set">
+                        <div class="product-badges">
+                            <span class="badge sale">31% OFF</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="action-btn wishlist-btn"><i class="fas fa-heart"></i></button>
+                            <button class="action-btn quick-view-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Designer Kurta Set</h3>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-count">(67)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">₹8,999</span>
+                            <span class="original-price">₹12,999</span>
+                        </div>
+                        <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://static.vecteezy.com/system/resources/thumbnails/070/420/243/small/vibrant-indian-sarees-and-fabrics-displayed-for-sale-free-photo.jpg" alt="Bridal Jewelry Set">
+                        <div class="product-badges">
+                            <span class="badge new">New</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="action-btn wishlist-btn"><i class="fas fa-heart"></i></button>
+                            <button class="action-btn quick-view-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Bridal Jewelry Set</h3>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(156)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">₹12,999</span>
+                        </div>
+                        <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://static.vecteezy.com/system/resources/thumbnails/070/420/243/small/vibrant-indian-sarees-and-fabrics-displayed-for-sale-free-photo.jpg" alt="Festive Anarkali">
+                        <div class="product-badges">
+                            <span class="badge sale">20% OFF</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="action-btn wishlist-btn"><i class="fas fa-heart"></i></button>
+                            <button class="action-btn quick-view-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Festive Anarkali</h3>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="rating-count">(92)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">₹15,999</span>
+                            <span class="original-price">₹19,999</span>
+                        </div>
+                        <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://static.vecteezy.com/system/resources/thumbnails/070/420/243/small/vibrant-indian-sarees-and-fabrics-displayed-for-sale-free-photo.jpg" alt="Traditional Dupatta">
+                        <div class="product-actions">
+                            <button class="action-btn wishlist-btn"><i class="fas fa-heart"></i></button>
+                            <button class="action-btn quick-view-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Traditional Dupatta</h3>
+                        <div class="product-rating">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="rating-count">(45)</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">₹3,999</span>
+                        </div>
+                        <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <h3>Royal Rajasthan Collection</h3>
+                        <p>Preserving heritage through authentic craftsmanship and timeless designs.</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="collections.html">Collections</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Customer Care</h4>
+                    <ul>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Track Your Order</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Jaipur, Rajasthan, India</p>
+                        <p><i class="fas fa-phone"></i> +91-98765-43210</p>
+                        <p><i class="fas fa-envelope"></i> info@royalrajasthan.com</p>
+                        <p><i class="fas fa-clock"></i> Mon-Sat: 10AM-8PM</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 Royal Rajasthan Collection. All rights reserved.</p>
+                    <div class="footer-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="whatsapp-float">
+        <a href="https://wa.me/919876543210" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

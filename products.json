@@ -1,0 +1,76 @@
+[
+  {
+    "id": "royal-red-lehenga",
+    "name": "Royal Red Lehenga",
+    "price": 25999,
+    "originalPrice": 35999,
+    "category": "Lehengas",
+    "image": "https://static.vecteezy.com/system/resources/thumbnails/070/420/243/small/vibrant-indian-sarees-and-fabrics-displayed-for-sale-free-photo.jpg",
+    "description": "Exquisite royal red lehenga crafted with premium silk and adorned with intricate gold embroidery.",
+    "features": [
+      "Premium silk fabric with gold thread work",
+      "Traditional Rajasthani mirror work",
+      "Zardozi embroidery with pearls",
+      "Semi-stitched blouse included",
+      "Matching dupatta with heavy border"
+    ],
+    "details": {
+      "Fabric": "Premium Silk",
+      "Work": "Zardozi, Mirror Work",
+      "Occasion": "Wedding, Festival",
+      "Care": "Dry Clean Only",
+      "Delivery": "7-10 Business Days"
+    },
+    "sizes": ["XS (32)", "S (34)", "M (36)", "L (38)", "XL (40)", "XXL (42)"]
+  },
+  {
+    "id": "golden-silk-saree",
+    "name": "Golden Silk Saree",
+    "price": 18999,
+    "originalPrice": 24999,
+    "category": "Sarees",
+    "image": "https://static.vecteezy.com/system/resources/thumbnails/070/420/243/small/vibrant-indian-sarees-and-fabrics-displayed-for-sale-free-photo.jpg",
+    "description": "Elegant golden silk saree with traditional Rajasthani bandhani print and gold border.",
+    "features": [
+      "Pure silk fabric with bandhani print",
+      "Heavy gold zari border",
+      "Traditional tie-dye technique",
+      "Matching blouse piece included",
+      "6.5 meters length"
+    ],
+    "details": {
+      "Fabric": "Pure Silk",
+      "Print": "Bandhani",
+      "Border": "Gold Zari",
+      "Length": "6.5 Meters",
+      "Care": "Dry Clean Only",
+      "Delivery": "5-7 Business Days"
+    },
+    "colors": ["Gold", "Maroon", "Green"]
+  },
+  {
+    "id": "designer-kurta-set",
+    "name": "Designer Kurta Set",
+    "price": 8999,
+    "originalPrice": 12999,
+    "category": "Kurtas",
+    "image": "https://static.vecteezy.com/system/resources/thumbnails/070/420/243/small/vibrant-indian-sarees-and-fabrics-displayed-for-sale-free-photo.jpg",
+    "description": "Contemporary designer kurta set with traditional block prints and modern cuts.",
+    "features": [
+      "100% cotton fabric",
+      "Hand-block printed designs",
+      "Comfortable straight fit",
+      "Matching palazzo pants",
+      "Contrast dupatta included"
+    ],
+    "details": {
+      "Fabric": "100% Cotton",
+      "Print": "Hand Block Print",
+      "Fit": "Straight",
+      "Set Includes": "Kurta, Palazzo, Dupatta",
+      "Care": "Machine Wash",
+      "Delivery": "3-5 Business Days"
+    },
+    "sizes": ["S", "M", "L", "XL", "XXL"]
+  }
+]
