@@ -5,145 +5,522 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products - Royal Rajasthan Collection</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .filter-section {
+            background: linear-gradient(135deg, #8B4513 0%, #D4AF37 100%);
+            padding: 3rem 0;
+            margin-bottom: 3rem;
+        }
+        .filter-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .filter-card {
+            background: rgba(255,255,255,0.95);
+            padding: 1.5rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transform: translateY(0);
+            transition: all 0.3s ease;
+        }
+        .filter-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        .filter-card h3 {
+            color: #8B4513;
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+        .custom-select {
+            position: relative;
+            width: 100%;
+        }
+        .custom-select select {
+            width: 100%;
+            padding: 12px 40px 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            background: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            appearance: none;
+        }
+        .custom-select select:focus {
+            border-color: #D4AF37;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+        .custom-select::after {
+            content: '\f107';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #8B4513;
+            pointer-events: none;
+            transition: transform 0.3s ease;
+        }
+        .custom-select:hover::after {
+            transform: translateY(-50%) rotate(180deg);
+        }
+        .apply-filters-btn {
+            background: linear-gradient(135deg, #8B4513 0%, #D4AF37 100%);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+        }
+        .apply-filters-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 69, 19, 0.4);
+        }
+        .category-selection {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        .category-tab {
+            padding: 12px 25px;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        .category-tab:hover, .category-tab.active {
+            background: linear-gradient(135deg, #8B4513 0%, #D4AF37 100%);
+            color: white;
+            border-color: #8B4513;
+            transform: translateY(-2px);
+        }
+        .products-display {
+            min-height: 400px;
+            display: none;
+        }
+        .products-display.active {
+            display: block;
+        }
+        .no-products {
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+        }
+        .loading-spinner {
+            display: none;
+            text-align: center;
+            padding: 3rem;
+        }
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #8B4513;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </head>
 <body>
     <header class="header">
-        <nav class="navbar">
-            <div class="nav-container">
-                <div class="logo">
-                    <h1>Royal Rajasthan Collection</h1>
-                    <span class="tagline">Authentic Heritage Wear</span>
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-content">
+                    <div class="contact-info">
+                        <span><i class="fas fa-phone"></i> +91-98765-43210</span>
+                        <span><i class="fas fa-envelope"></i> info@royalrajasthan.com</span>
+                    </div>
+                    <div class="header-links">
+                        <a href="#">Track Order</a>
+                        <a href="#">Size Guide</a>
+                        <a href="#">Account</a>
+                    </div>
                 </div>
-                <ul class="nav-menu">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="collections.html">Collections</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-                <div class="nav-icons">
-                    <span class="search-icon">🔍</span>
-                    <span class="cart-icon">🛒</span>
+            </div>
+        </div>
+        
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-content">
+                    <div class="logo">
+                        <h1>Royal Rajasthan</h1>
+                        <span>Collection</span>
+                    </div>
+                    
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="collections.html">Collections</a></li>
+                        <li><a href="products.html" class="active">Products</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                    
+                    <div class="nav-actions">
+                        <div class="search-box">
+                            <input type="text" placeholder="Search products...">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <div class="action-icons">
+                            <div class="icon-item">
+                                <i class="fas fa-heart"></i>
+                                <span class="badge">0</span>
+                            </div>
+                            <div class="icon-item">
+                                <i class="fas fa-shopping-bag"></i>
+                                <span class="badge">0</span>
+                            </div>
+                            <div class="icon-item">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mobile-menu-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </div>
             </div>
         </nav>
     </header>
 
-    <main class="products-page">
-        <section class="page-hero">
-            <div class="container">
+    <section class="page-hero">
+        <div class="page-hero-bg"></div>
+        <div class="container">
+            <div class="page-hero-content">
                 <h1>Our Products</h1>
-                <p>Browse our complete collection</p>
+                <p>Discover authentic Rajasthani clothing with advanced filters</p>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="products-grid">
-            <div class="container">
-                <div class="filter-bar">
-                    <select class="filter-select">
-                        <option>All Categories</option>
-                        <option>Lehengas</option>
-                        <option>Sarees</option>
-                        <option>Kurtas</option>
-                        <option>Accessories</option>
-                    </select>
-                    <select class="filter-select">
-                        <option>Price Range</option>
-                        <option>Under ₹5,000</option>
-                        <option>₹5,000 - ₹15,000</option>
-                        <option>₹15,000 - ₹30,000</option>
-                        <option>Above ₹30,000</option>
-                    </select>
+    <section class="category-selection">
+        <div class="container">
+            <h2>Choose a Category</h2>
+            <div class="category-tabs">
+                <div class="category-tab active" data-category="all">All Products</div>
+                <div class="category-tab" data-category="lehenga">Lehengas</div>
+                <div class="category-tab" data-category="saree">Sarees</div>
+                <div class="category-tab" data-category="kurta">Kurtas</div>
+                <div class="category-tab" data-category="accessories">Accessories</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-container">
+                <div class="filter-card">
+                    <h3><i class="fas fa-tags"></i> Price Range</h3>
+                    <div class="custom-select">
+                        <select id="price-filter">
+                            <option value="">All Prices</option>
+                            <option value="0-5000">Under ₹5,000</option>
+                            <option value="5000-15000">₹5,000 - ₹15,000</option>
+                            <option value="15000-30000">₹15,000 - ₹30,000</option>
+                            <option value="30000+">Above ₹30,000</option>
+                        </select>
+                    </div>
                 </div>
-
-                <div class="products-list">
-                    <div class="product-card">
-                        <a href="product-royal-red-lehenga.html">
-                            <img src="https://static.vecteezy.com/system/resources/thumbnails/070/420/243/small/vibrant-indian-sarees-and-fabrics-displayed-for-sale-free-photo.jpg" alt="Royal Red Lehenga">
-                        </a>
-                        <div class="product-info">
-                            <h3><a href="product-royal-red-lehenga.html">Royal Red Lehenga</a></h3>
-                            <p class="price">₹25,999</p>
-                            <button class="add-to-cart">Add to Cart</button>
-                        </div>
+                
+                <div class="filter-card">
+                    <h3><i class="fas fa-palette"></i> Color</h3>
+                    <div class="custom-select">
+                        <select id="color-filter">
+                            <option value="">All Colors</option>
+                            <option value="red">Red</option>
+                            <option value="blue">Blue</option>
+                            <option value="green">Green</option>
+                            <option value="pink">Pink</option>
+                            <option value="gold">Gold</option>
+                            <option value="maroon">Maroon</option>
+                        </select>
                     </div>
-
-                    <div class="product-card">
-                        <a href="product-golden-silk-saree.html">
-                            <img src="https://static.vecteezy.com/system/resources/thumbnails/070/420/243/small/vibrant-indian-sarees-and-fabrics-displayed-for-sale-free-photo.jpg" alt="Golden Silk Saree">
-                        </a>
-                        <div class="product-info">
-                            <h3><a href="product-golden-silk-saree.html">Golden Silk Saree</a></h3>
-                            <p class="price">₹18,999</p>
-                            <button class="add-to-cart">Add to Cart</button>
-                        </div>
+                </div>
+                
+                <div class="filter-card">
+                    <h3><i class="fas fa-sort"></i> Sort By</h3>
+                    <div class="custom-select">
+                        <select id="sort-filter">
+                            <option value="featured">Featured</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="newest">Newest First</option>
+                            <option value="rating">Highest Rated</option>
+                        </select>
                     </div>
-
-                    <div class="product-card">
-                        <a href="product-designer-kurta-set.html">
-                            <img src="https://static.vecteezy.com/system/resources/thumbnails/070/420/243/small/vibrant-indian-sarees-and-fabrics-displayed-for-sale-free-photo.jpg" alt="Designer Kurta Set">
-                        </a>
-                        <div class="product-info">
-                            <h3><a href="product-designer-kurta-set.html">Designer Kurta Set</a></h3>
-                            <p class="price">₹8,999</p>
-                            <button class="add-to-cart">Add to Cart</button>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <img src="https://static.vecteezy.com/system/resources/thumbnails/070/420/243/small/vibrant-indian-sarees-and-fabrics-displayed-for-sale-free-photo.jpg" alt="Bridal Jewelry Set">
-                        <div class="product-info">
-                            <h3>Bridal Jewelry Set</h3>
-                            <p class="price">₹12,999</p>
-                            <button class="add-to-cart">Add to Cart</button>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <img src="https://static.vecteezy.com/system/resources/thumbnails/070/420/243/small/vibrant-indian-sarees-and-fabrics-displayed-for-sale-free-photo.jpg" alt="Festive Anarkali">
-                        <div class="product-info">
-                            <h3>Festive Anarkali</h3>
-                            <p class="price">₹15,999</p>
-                            <button class="add-to-cart">Add to Cart</button>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <img src="https://static.vecteezy.com/system/resources/thumbnails/070/420/243/small/vibrant-indian-sarees-and-fabrics-displayed-for-sale-free-photo.jpg" alt="Traditional Dupatta">
-                        <div class="product-info">
-                            <h3>Traditional Dupatta</h3>
-                            <p class="price">₹3,999</p>
-                            <button class="add-to-cart">Add to Cart</button>
-                        </div>
+                </div>
+                
+                <div class="filter-card">
+                    <h3><i class="fas fa-star"></i> Rating</h3>
+                    <div class="custom-select">
+                        <select id="rating-filter">
+                            <option value="">All Ratings</option>
+                            <option value="4+">4+ Stars</option>
+                            <option value="3+">3+ Stars</option>
+                            <option value="2+">2+ Stars</option>
+                        </select>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
+            
+            <div style="text-align: center;">
+                <button class="apply-filters-btn" onclick="applyFilters()">
+                    <i class="fas fa-filter"></i> Apply Filters
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="products-main">
+        <div class="container">
+            <div class="loading-spinner" id="loading">
+                <div class="spinner"></div>
+                <p>Loading products...</p>
+            </div>
+            
+            <div class="products-display active" id="products-container">
+                <div class="no-products">
+                    <i class="fas fa-search" style="font-size: 3rem; color: #ccc; margin-bottom: 1rem;"></i>
+                    <h3>Select filters and click "Apply Filters" to view products</h3>
+                    <p>Choose your preferred category, price range, and other filters above</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Royal Rajasthan Collection</h3>
-                    <p>Preserving heritage through fashion</p>
+                    <div class="footer-logo">
+                        <h3>Royal Rajasthan Collection</h3>
+                        <p>Preserving heritage through authentic craftsmanship and timeless designs.</p>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
                 </div>
+                
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="collections.html">Collections</a></li>
                         <li><a href="products.html">Products</a></li>
-                        <li><a href="about.html">About</a></li>
+                        <li><a href="about.html">About Us</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
+                
+                <div class="footer-section">
+                    <h4>Customer Care</h4>
+                    <ul>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Track Your Order</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Jaipur, Rajasthan, India</p>
+                        <p><i class="fas fa-phone"></i> +91-98765-43210</p>
+                        <p><i class="fas fa-envelope"></i> info@royalrajasthan.com</p>
+                        <p><i class="fas fa-clock"></i> Mon-Sat: 10AM-8PM</p>
+                    </div>
+                </div>
             </div>
+            
             <div class="footer-bottom">
-                <p>&copy; 2024 Royal Rajasthan Collection. All rights reserved.</p>
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 Royal Rajasthan Collection. All rights reserved.</p>
+                    <div class="footer-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Sitemap</a>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
+
+    <div class="whatsapp-float">
+        <a href="https://wa.me/919876543210" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script>
+        // Sample product data
+        const products = {
+            lehenga: [
+                {id: 1, name: "Royal Red Lehenga", price: 25999, originalPrice: 35999, image: "https://static.vecteezy.com/system/resources/thumbnails/070/420/243/small/vibrant-indian-sarees-and-fabrics-displayed-for-sale-free-photo.jpg", rating: 5, color: "red"},
+                {id: 2, name: "Golden Bridal Lehenga", price: 45999, originalPrice: 55999, image: "https://static.vecteezy.com/system/resources/thumbnails/070/420/243/small/vibrant-indian-sarees-and-fabrics-displayed-for-sale-free-photo.jpg", rating: 5, color: "gold"},
+                {id: 3, name: "Pink Designer Lehenga", price: 18999, originalPrice: 24999, image: "https://static.vecteezy.com/system/resources/thumbnails/070/420/243/small/vibrant-indian-sarees-and-fabrics-displayed-for-sale-free-photo.jpg", rating: 4, color: "pink"}
+            ],
+            saree: [
+                {id: 4, name: "Silk Saree", price: 12999, originalPrice: 16999, image: "https://static.vecteezy.com/system/resources/thumbnails/070/420/243/small/vibrant-indian-sarees-and-fabrics-displayed-for-sale-free-photo.jpg", rating: 4, color: "blue"},
+                {id: 5, name: "Banarasi Saree", price: 22999, originalPrice: 28999, image: "https://static.vecteezy.com/system/resources/thumbnails/070/420/243/small/vibrant-indian-sarees-and-fabrics-displayed-for-sale-free-photo.jpg", rating: 5, color: "maroon"}
+            ],
+            kurta: [
+                {id: 6, name: "Cotton Kurta Set", price: 3999, originalPrice: 5999, image: "https://static.vecteezy.com/system/resources/thumbnails/070/420/243/small/vibrant-indian-sarees-and-fabrics-displayed-for-sale-free-photo.jpg", rating: 4, color: "green"},
+                {id: 7, name: "Designer Kurta", price: 8999, originalPrice: 12999, image: "https://static.vecteezy.com/system/resources/thumbnails/070/420/243/small/vibrant-indian-sarees-and-fabrics-displayed-for-sale-free-photo.jpg", rating: 3, color: "blue"}
+            ],
+            accessories: [
+                {id: 8, name: "Jewelry Set", price: 5999, originalPrice: 7999, image: "https://static.vecteezy.com/system/resources/thumbnails/070/420/243/small/vibrant-indian-sarees-and-fabrics-displayed-for-sale-free-photo.jpg", rating: 5, color: "gold"}
+            ]
+        };
+
+        let currentCategory = 'all';
+
+        // Category tab functionality
+        document.querySelectorAll('.category-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.category-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                currentCategory = this.dataset.category;
+            });
+        });
+
+        function applyFilters() {
+            const loading = document.getElementById('loading');
+            const container = document.getElementById('products-container');
+            
+            // Show loading
+            loading.style.display = 'block';
+            container.innerHTML = '';
+            
+            setTimeout(() => {
+                loading.style.display = 'none';
+                
+                let filteredProducts = [];
+                
+                if (currentCategory === 'all') {
+                    filteredProducts = Object.values(products).flat();
+                } else {
+                    filteredProducts = products[currentCategory] || [];
+                }
+                
+                // Apply filters
+                const priceFilter = document.getElementById('price-filter').value;
+                const colorFilter = document.getElementById('color-filter').value;
+                const ratingFilter = document.getElementById('rating-filter').value;
+                const sortFilter = document.getElementById('sort-filter').value;
+                
+                // Filter by price
+                if (priceFilter) {
+                    if (priceFilter === '30000+') {
+                        filteredProducts = filteredProducts.filter(p => p.price >= 30000);
+                    } else {
+                        const [min, max] = priceFilter.split('-').map(Number);
+                        filteredProducts = filteredProducts.filter(p => p.price >= min && p.price <= max);
+                    }
+                }
+                
+                // Filter by color
+                if (colorFilter) {
+                    filteredProducts = filteredProducts.filter(p => p.color === colorFilter);
+                }
+                
+                // Filter by rating
+                if (ratingFilter) {
+                    const minRating = parseInt(ratingFilter);
+                    filteredProducts = filteredProducts.filter(p => p.rating >= minRating);
+                }
+                
+                // Sort products
+                if (sortFilter === 'price-low') {
+                    filteredProducts.sort((a, b) => a.price - b.price);
+                } else if (sortFilter === 'price-high') {
+                    filteredProducts.sort((a, b) => b.price - a.price);
+                } else if (sortFilter === 'rating') {
+                    filteredProducts.sort((a, b) => b.rating - a.rating);
+                }
+                
+                displayProducts(filteredProducts);
+            }, 1000);
+        }
+
+        function displayProducts(products) {
+            const container = document.getElementById('products-container');
+            
+            if (products.length === 0) {
+                container.innerHTML = `
+                    <div class="no-products">
+                        <i class="fas fa-search" style="font-size: 3rem; color: #ccc; margin-bottom: 1rem;"></i>
+                        <h3>No products found</h3>
+                        <p>Try adjusting your filters to see more results</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            const productsHTML = products.map(product => `
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="${product.image}" alt="${product.name}">
+                        <div class="product-badges">
+                            <span class="badge sale">${Math.round((1 - product.price/product.originalPrice) * 100)}% OFF</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="action-btn wishlist-btn"><i class="fas fa-heart"></i></button>
+                            <button class="action-btn quick-view-btn"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>${product.name}</h3>
+                        <div class="product-rating">
+                            <div class="stars">
+                                ${Array(5).fill().map((_, i) => 
+                                    `<i class="fas fa-star${i < product.rating ? '' : ' far'}"></i>`
+                                ).join('')}
+                            </div>
+                            <span class="rating-count">(${Math.floor(Math.random() * 200) + 50})</span>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">₹${product.price.toLocaleString()}</span>
+                            <span class="original-price">₹${product.originalPrice.toLocaleString()}</span>
+                        </div>
+                        <button class="btn btn-primary add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            `).join('');
+            
+            container.innerHTML = `<div class="products-grid">${productsHTML}</div>`;
+        }
+    </script>
+    <script src="script.js"></script>
 </body>
 </html>
